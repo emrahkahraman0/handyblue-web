@@ -1,0 +1,264 @@
+/////FAQ.HTML
+
+//Faq_page#
+#faq_page {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient( rgba(28, 62, 155, .7), rgba(28, 62, 155, .7)), url("https://via.placeholder.com/1920x250");
+  @include bg-size(cover);
+  background-position: center;
+  position: relative;
+  //page_text
+  .page_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    h6 {
+      text-transform: uppercase;
+      font-size: 50px;
+      @include weight(bold);
+      color: $secondary-color;
+      letter-spacing: 1px;
+    }
+    ul {
+      text-align: center;
+      padding-top: 15px;
+      @include flex();
+      @include align-items(center);
+      @include justify-content(center);
+      li {
+        a {
+          color: $base-color;
+          text-transform: capitalize;
+          font-size: $size;
+          span {
+            padding: 0 7px;
+          }
+        }
+      }
+    }
+  }
+  //Notebok
+  @include notebook {
+    .page_text {
+      h6 {font-size: 35px; line-height: normal}
+    }
+  }
+  //Mobil
+  @include mobil {
+    .page_text {
+      h6 {font-size: 25px}
+      ul {
+        padding-top: 10px;
+        li {
+          a {
+            font-size: 12px;
+            span {padding: 0 5px;}
+          }
+        }
+      }
+    }
+  }
+  //Small
+  @include small {
+    .page_text {
+      h6 {font-size: 18px; line-height: normal}
+      ul {
+        padding-top: 15px;
+        @include flex();
+        @include flex-direction(column);
+        text-align: center;
+        li {
+          padding-bottom: 5px;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          a {
+            line-height: normal;
+            span {display: none}
+          }
+        }
+      }
+    }
+  }
+}
+
+//Our_Faq#
+#our_faq {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  //our_faq
+  .our_faq {
+    //&_accordion
+    &_accordion {
+      .accordion {
+        .accordion-item {
+          border-bottom: 1px solid #e5e5e5;
+          margin-bottom: 15px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          button[aria-expanded='true'] {
+            border-bottom: 1px solid #e5e5e5;
+          }
+        }
+        .accordion-title {
+          line-height: normal;
+          font-size: 16px;
+        }
+        button {
+          position: relative;
+          display: block;
+          text-align: left;
+          width: 100%;
+          padding: 10px 0;
+          color: $primary-color;
+          font-size: 16px;
+          background: none;
+          outline: none;
+          &:hover, &:focus {
+            cursor: pointer;
+            &::after {
+              cursor: pointer;
+              color: $secondary-color;
+              border: 1px solid $secondary-color;
+            }
+          }
+          .icon {
+            display: inline-block;
+            position: absolute;
+            top: 8px;
+            right: 0;
+            width: 22px;
+            height: 22px;
+            border: 1px solid;
+            border-radius: 22px;
+            &::before {
+              display: block;
+              position: absolute;
+              content: '';
+              top: 9px;
+              left: 5px;
+              width: 10px;
+              height: 2px;
+              background: currentColor;
+            }
+            &::after {
+              display: block;
+              position: absolute;
+              content: '';
+              top: 5px;
+              left: 9px;
+              width: 2px;
+              height: 10px;
+              background: currentColor;
+            }
+          }
+        }
+        button[aria-expanded='true'] {
+          color: $secondary-color;
+          .icon {
+            &::after {
+              width: 0;
+            }
+          }
+          + .accordion-content {
+            opacity: 1;
+            max-height: 9em;
+            transition: all 200ms linear;
+            will-change: opacity, max-height;
+          }
+        }
+        .accordion-content {
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: opacity 200ms linear, max-height 200ms linear;
+          will-change: opacity, max-height;
+          p {
+            font-size: $size;
+            @include weight(regular);
+            line-height: 20px;
+            margin: 15px 0;
+          }
+        }
+      }
+      //Mobil
+      @include mobil {
+        .accordion {
+          .accordion-item {
+            margin-bottom: 10px;
+            .accordion-title {
+              font-size: 12px;
+            }
+            .accordion-content {
+              p {
+                font-size: 12px;
+                line-height: normal;
+                margin: 10px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    //&_contact
+    &_contact {
+      h6 {
+        @include weight(bold);
+        font-size: 24px;
+        color: $primary-color;
+        text-transform: uppercase;
+      }
+      p {
+        padding-top: 10px;
+        color: $four-color;
+        font-size: $size;
+        line-height: 19px;
+        letter-spacing: 0.3px;
+      }
+      form {
+        padding-top: 25px;
+        input , textarea {
+          width: 100%;
+          border: 1px solid #e5e5e5;
+          background-color: #f2f2f2;
+          padding: 15px;
+          color: $four-color;
+          margin-bottom: 20px;
+        }
+        button {
+          background-color: $secondary-color;
+          cursor: pointer;
+          padding: 20px 40px;
+          color: $base-color;
+          font-size: $size;
+          text-transform: uppercase;
+          @include weight(bold);
+        }
+      }
+      //Notebook
+      @include notebook {
+        margin-top: 40px;
+        h6 {font-size: 18px}
+      }
+      //Mobil
+      @include mobil {
+        h6 {font-size: $size; line-height: normal;}
+        p {font-size: 12px; line-height: 18px;}
+        form {
+          input {
+            font-size: 12px; line-height: normal;
+            margin-bottom: 15px;
+          }
+          button {
+            padding: 10px 20px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

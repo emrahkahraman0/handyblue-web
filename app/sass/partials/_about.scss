@@ -1,0 +1,406 @@
+/////ABOUT.HTML
+
+//About_Page#
+#about_page {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient( rgba(28, 62, 155, .7), rgba(28, 62, 155, .7)), url("https://via.placeholder.com/1920x250");
+  @include bg-size(cover);
+  background-position: center;
+  position: relative;
+  //page_text
+  .page_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    h6 {
+      text-transform: uppercase;
+      font-size: 50px;
+      @include weight(bold);
+      color: $secondary-color;
+      letter-spacing: 1px;
+    }
+    ul {
+      text-align: center;
+      padding-top: 15px;
+      @include flex();
+      @include align-items(center);
+      @include justify-content(center);
+      li {
+        a {
+          color: $base-color;
+          text-transform: capitalize;
+          font-size: $size;
+          span {
+            padding: 0 7px;
+          }
+        }
+      }
+    }
+  }
+  //Notebok
+  @include notebook {
+    .page_text {
+      h6 {font-size: 35px}
+    }
+  }
+  //Mobil
+  @include mobil {
+    .page_text {
+      h6 {font-size: 25px}
+      ul {
+        padding-top: 10px;
+        li {
+          a {
+            font-size: 12px;
+            span {padding: 0 5px;}
+          }
+        }
+      }
+    }
+  }
+  //Small
+  @include small {
+    .page_text {
+      h6 {font-size: 18px; line-height: normal}
+      ul {
+        padding-top: 15px;
+        @include flex();
+        @include flex-direction(column);
+        text-align: center;
+        li {
+          padding-bottom: 5px;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          a {
+            span {display: none}
+          }
+        }
+      }
+    }
+  }
+}
+
+//About_Counter#
+#about_counter {
+  width: 100%;
+  background: linear-gradient( rgba(57, 57, 57, .8), rgba(57, 57, 57, .8)), url("https://via.placeholder.com/1920x670");
+  padding: 80px 0 80px 0;
+  @include bg-size(cover);
+  background-position: center;
+  //about_counter
+  .about_counter {
+    text-align: center;
+    &_item {
+      i {
+        width: 50px;
+        height: 50px;
+        line-height: 52px;
+        text-align: center;
+        background-color: $three-color;
+        @include border-radius(50%);
+        color: $base-color;
+      }
+      .count {
+        padding-top: 15px;
+        font-size: 40px;
+        @include weight(bold);
+        color: $secondary-color;
+        letter-spacing: 1px;
+      }
+      p {
+        padding-top: 15px;
+        text-transform: uppercase;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        color: #999999;
+      }
+    }
+  }
+  //Large
+  @include large {
+    padding: 80px 0 50px 0;
+    .about_counter {
+      &_item {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  //Mobil
+  @include mobil {
+    .about_counter {
+      &_item {
+        i {
+          width: 40px;
+          height: 40px;
+          line-height: 42px;
+          font-size: 20px;
+        }
+        .count {font-size: 25px; padding-top: 10px}
+        p {font-size: 12px; line-height: normal; padding-top: 10px}
+      }
+    }
+  }
+}
+
+//About_Team#
+#about_team {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  text-align: center;
+  //title
+  .title {
+    font-size: 30px;
+    @include weight(bold);
+    text-transform: uppercase;
+    color: $primary-color;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      right: 0;
+      width: 60px;
+      height: 3px;
+      margin: 0 auto;
+      background-color: $three-color;
+    }
+    //Tablet
+    @include tablet {
+      font-size: 20px;
+    }
+    //Mobil
+    @include mobil {
+      font-size: 16px;
+      line-height: normal;
+      &::before {bottom: -12px}
+    }
+  }
+  //about_team
+  .about_team {
+    padding-top: 60px;
+    //&_item
+    &_item {
+      position: relative;
+      img {width: 100%}
+      //social
+      .social {
+        @include flex();
+        @include align-items(center);
+        @include justify-content(center);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: $three-color;
+        @include transition(0.3s);
+        opacity: 0;
+        visibility: hidden;
+        li {
+          display: inline-block;
+          margin-right: 20px;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {color: $base-color}
+        }
+      }
+      //team_caption
+      .team_caption {
+        margin-top: -2px;
+        background-color: $three-color;
+        padding: 15px 5px 15px 5px;
+        position: relative;
+        z-index: 1;
+        h5 {
+          color: $base-color;
+          font-size: 18px;
+          text-transform: capitalize;
+          @include weight(bold);
+        }
+        h6 {
+          padding-top: 8px;
+          color: #ccc;
+          font-size: $size;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        .social {
+          opacity: 1;
+          visibility: visible;
+        }
+        .team_caption {
+          background-color: $three-color;
+        }
+      }
+    }
+  }
+  //Large
+  @include large {
+    padding: 80px 0 50px 0;
+    .about_team {
+      &_item {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  //Mobil
+  @include mobil {
+    .about_team {
+      &_item {
+        .team_caption {
+          h5 {font-size: $size; line-height: normal;}
+          h6 {font-size: 12px; padding-top: 4px; line-height: normal;}
+        }
+      }
+    }
+  }
+}
+
+//About_Clients#
+#about_clients {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  //title
+  .title {
+    text-align: center;
+    font-size: 30px;
+    @include weight(bold);
+    text-transform: uppercase;
+    color: $primary-color;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      right: 0;
+      width: 60px;
+      height: 3px;
+      margin: 0 auto;
+      background-color: $three-color;
+    }
+    //Tablet
+    @include tablet {
+      font-size: 20px;
+    }
+    //Mobil
+    @include mobil {
+      font-size: 16px;
+      line-height: normal;
+      &::before {bottom: -12px}
+    }
+  }
+  //about_clients_owl
+  .about_clients_owl {
+    padding-top: 60px;
+    //item
+    .item {
+      //client_caption
+      .client_caption {
+        background-color: $three-color;
+        padding: 35px 20px;
+        position: relative;
+        &::before {
+          display: block;
+          z-index: 99;
+          content: '';
+          position: absolute;
+          left: 5%;
+          top: 106%;
+          margin-top: -10px;
+          border-right: 15px solid transparent;
+          border-bottom: 10px solid transparent;
+          border-top: 18px solid $three-color;
+          border-left: 15px solid transparent;
+        }
+        h6 {
+          color: $secondary-color;
+          font-size: 18px;
+          text-transform: capitalize;
+          @include weight(bold);
+          letter-spacing: 0.3px;
+        }
+        p {
+          padding-top: 15px;
+          line-height: 20px;
+          font-size: $size;
+          color: $base-color;
+        }
+      }
+      //client
+      .client {
+        padding-top: 35px;
+        @include flex();
+        @include align-items(center);
+        &_image {
+          img {
+            @include border-radius(50%);
+          }
+        }
+        &_desc {
+          padding-left: 15px;
+          h4 {
+            color: $primary-color;
+            font-size: 18px;
+            @include weight(bold);
+            text-transform: capitalize;
+          }
+          h5  {
+            padding-top: 6px;
+            color: $four-color;
+            font-size: $size;
+          }
+        }
+      }
+      //Mobil
+      @include mobil {
+        text-align: center;
+        //client_caption
+        .client_caption {
+          padding: 15px 10px;
+          &::before {
+            left: 47%;
+            top: 106%;
+            margin-top: -10px;
+          }
+          h6 {
+            font-size: $size;
+          }
+          p {
+            padding-top: 7px;
+            font-size: 12px;
+            line-height: normal;
+          }
+        }
+        //client
+        .client {
+          padding-top: 30px;
+          @include flex();
+          @include flex-direction(column);
+          &_desc {
+            padding: 5px 0 0 0;
+            h4 {font-size: $size; line-height: normal}
+            h5 {font-size: 12px; line-height: normal; padding-top: 3px}
+          }
+        }
+      }
+      //163px
+      @media screen and(max-width: 163px) {
+        .client_caption {
+          &::before {
+            margin-top: -12px;
+          }
+        }
+      }
+    }
+  }
+}

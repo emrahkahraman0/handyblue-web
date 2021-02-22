@@ -1,0 +1,886 @@
+/////İNDEX.HTML
+
+//Home_Slider#
+#home_slider {
+    width: 100%;
+    //home_slider_owl
+    .home_slider_owl {
+        position: relative;
+        //item
+        .item {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(57,57,57,0.6);
+            }
+            //item_caption
+            .item_caption {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include translate(-50%, -50%);
+                text-align: center;
+                h6 {
+                    font-size: 35px;
+                    text-transform: capitalize;
+                    @include weight(bold);
+                    line-height: normal;
+                    letter-spacing: 0.3px;
+                    color: $base-color;
+                }
+                p {
+                    padding-top: 10px;
+                    color: #cccccc;
+                    font-size: 18px;
+                    letter-spacing: 0.5px;
+                    line-height: normal;
+                }
+                button {
+                    margin-top: 30px;
+                    border: 1px solid $base-color;
+                    background-color: transparent;
+                    padding: 15px 30px;
+                    cursor: pointer;
+                    margin-right: 15px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    a {
+                        color: $base-color;
+                        text-transform: uppercase;
+                        @include weight(bold);
+                        font-size: $size;
+                    }
+                    &:active, &:focus, &:hover {
+                        background-color: $secondary-color;
+                        border: 1px solid $secondary-color;
+                    }
+                }
+            }
+            //Notebook
+            @include notebook {
+                .item_caption {
+                    h6 {font-size: 25px;}
+                    p {font-size: $size; line-height: 20px;}
+                    button {
+                        margin-top: 20px;
+                        padding: 10px 20px;
+                    }
+                }
+            }
+            //Tablet
+            @include tablet {
+                img {height: 100vh; object-fit: cover;}
+                //item_caption
+                .item_caption {
+                    button {
+                        margin-right: 0;
+                        width: 100%;
+                        padding: 10px 0;
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            //Mobil
+            @include mobil {
+                //item_caption
+                .item_caption {
+                    h6 {font-size: 18px;}
+                    p {font-size: 12px; line-height: normal;}
+                }
+            }
+            //X-Small
+            @include x-small {
+                //item_caption
+                .item_caption {
+                    h6 {font-size: $size; letter-spacing: 0.3px}
+                }
+            }
+        }
+        //owl-dots
+        .owl-dots {
+            margin-top: 0;
+            position: absolute;
+            bottom: 2%;
+            left: 0;
+            right: 0;
+            .owl-dot {
+                span {
+                    width: 25px;
+                    height: 7px;
+                    background-color: $three-color;
+                    @include transition(0.3s);
+                }
+            }
+            .active {
+                span {
+                    width: 40px;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+//Home_Features#
+#home_features {
+    width: 100%;
+    padding: 80px 0 80px 0;
+    //home_features
+    .home_features {
+        //&_image
+        &_image {
+            img {width: 100%}
+        }
+        //&_choose
+        &_choose {
+            h6 {
+                color: $primary-color;
+                font-size: 30px;
+                @include weight(bold);
+                letter-spacing: 0.3px;
+                text-transform: uppercase;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: -15px;
+                    left: 0;
+                    width: 60px;
+                    height: 3px;
+                    background-color: $three-color;
+                }
+            }
+            p {
+                padding-top: 35px;
+                color: $four-color;
+                font-size: $size;
+                line-height: 22px;
+                letter-spacing: 0.3px
+            }
+            //icons
+            .icons {
+                padding-top: 10px;
+                .icon-item {
+                    margin-top: 30px;
+                    @include flex();
+                    .icon {
+                        i {
+                            color: $base-color;
+                            width: 60px;
+                            height: 60px;
+                            line-height: 60px;
+                            text-align: center;
+                            background-color: $three-color;
+                        }
+                    }
+                    .desc {
+                        padding-left: 15px;
+                        h4 {
+                            font-size: 16px;
+                            color: $primary-color;
+                            text-transform: capitalize;
+                            @include weight(bold);
+                        }
+                        h5 {
+                            padding-top: 7px;
+                            color: $four-color;
+                            line-height: 20px;
+                            font-size: $size;
+                            letter-spacing: 0.3px;
+                        }
+                    }
+                }
+            }
+        }
+        //Large
+        @include large {
+            &_choose {
+                .icons {
+                    padding-top: 15px;
+                    .icon-item {
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+        //Notebook
+        @include notebook {
+            &_choose {
+                margin-top: 30px;
+                h6 {
+                    font-size: 25px;
+                    &::before {bottom: -13px;}
+                }
+                p {padding-top: 30px;}
+            }
+        }
+        //X-Tablet
+        @include x-tablet {
+            &_choose {
+                h6 {font-size: 18px;}
+                p {padding-top: 30px;}
+            }
+        }
+        //Mobil
+        @include mobil {
+            &_choose {
+                h6 {
+                    font-size: 12px;
+                    &::before {bottom: -10px;}
+                }
+                p {padding-top: 25px; font-size: 12px; line-height: 18px;}
+                .icons {
+                    .icon-item {
+                        @include flex();
+                        @include flex-direction(column);
+                        text-align: center;
+                        .desc {
+                            padding: 10px 0 0 0;
+                            h4 {font-size: 12px; line-height: normal;}
+                            h5 {padding-top: 5px; font-size: 12px; line-height: normal;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Home_Services#
+#home_services {
+    width: 100%;
+    background: linear-gradient( rgba(57, 57, 57, .8), rgba(57, 57, 57, .8)), url("https://via.placeholder.com/1920x670");
+    padding: 80px 0 80px 0;
+    @include bg-size(cover);
+    background-position: center;
+    text-align: center;
+    //title
+    .title {
+        font-size: 30px;
+        @include weight(bold);
+        text-transform: uppercase;
+        color: $base-color;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            margin: 0 auto;
+            background-color: $base-color;
+        }
+        //Tablet
+        @include tablet {
+            font-size: 20px;
+        }
+        //Mobil
+        @include mobil {
+            font-size: 16px;
+            line-height: normal;
+            &::before {bottom: -12px}
+        }
+    }
+    //home_services_owl
+    .home_services_owl {
+        padding-top: 70px;
+        position: relative;
+        //item
+        .item {
+            color: $base-color;
+            border: 3px solid $three-color;
+            padding: 40px 20px;
+            @include transition(0.3s);
+            h6 {
+                padding-top: 25px;
+                text-transform: capitalize;
+                font-size: 24px;
+                @include weight(bold);
+            }
+            p {
+                color: #cccccc;
+                padding-top: 15px;
+                line-height: 20px;
+            }
+            &:hover {
+                background-color: $three-color;
+                cursor: pointer;
+            }
+        }
+        //X-Tablet
+        @include x-tablet {
+            .item {
+                h6 {font-size: 18px; padding-top: 15px}
+                p {padding-top: 10px}
+            }
+        }
+        //Mobil
+        @include mobil {
+            .item {
+                padding: 20px 10px;
+                h6 {font-size: $size; padding-top: 15px; line-height: normal}
+                p {font-size: 12px; line-height: normal; padding-top: 9px}
+            }
+        }
+        //owl-nav
+        .owl-nav {
+            margin-top: 0;
+            .owl-prev {
+                position: absolute;
+                top: 60%;
+                left: -50px;
+                color: $secondary-color;
+                &::before {
+                    content: "\f30a";
+                    font-family: 'Font Awesome 5 Free';
+                    @include weight(bold);
+                    font-size: 25px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                span {display: none;}
+            }
+            .owl-next {
+                position: absolute;
+                top: 60%;
+                right: -50px;
+                color: $secondary-color;
+                &::before {
+                    content: "\f30b";
+                    font-family: 'Font Awesome 5 Free';
+                    @include weight(bold);
+                    font-size: 25px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                span {display: none;}
+            }
+            //1220px
+            @media screen and (max-width: 1220px) {
+                .owl-prev {left: -40px;}
+                .owl-next {right: -40px;}
+            }
+            //1020px
+            @media screen and (max-width: 1020px) {
+                .owl-prev {left: -25px;}
+                .owl-next {right: -25px;}
+            }
+            //X-Tablet
+            @include x-tablet {
+                .owl-prev {left: 0;}
+                .owl-next {right: 0;}
+            }
+        }
+    }
+    //button
+    .button {
+        margin-top: 40px;
+        background-color: $secondary-color;
+        padding: 15px 30px;
+        cursor: pointer;
+        cursor: pointer;
+        a {
+            color: $base-color;
+            text-transform: uppercase;
+            @include weight(bold);
+            font-size: $size;
+        }
+        //Mobil
+        @include mobil {
+            padding: 10px 20px;
+            a {font-size: 12px;}
+        }
+    }
+}
+
+//Home_Projects#
+#home_projects {
+    width: 100%;
+    padding: 80px 0 80px 0;
+    text-align: center;
+    //title
+    .title {
+        font-size: 30px;
+        @include weight(bold);
+        text-transform: uppercase;
+        color: $primary-color;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            margin: 0 auto;
+            background-color: $three-color;
+        }
+        //Tablet
+        @include tablet {
+            font-size: 20px;
+        }
+        //Mobil
+        @include mobil {
+            font-size: 16px;
+            line-height: normal;
+            &::before {bottom: -12px}
+        }
+    }
+    //home_projects_owl
+    .home_projects_owl {
+        padding-top: 70px;
+        //item
+        .item {
+            position: relative;
+            img {width: 100%}
+            .item_caption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                @include transition(0.4s);
+                background-color: $three-color;
+                visibility: hidden;
+                opacity: 0;
+                .caption {
+                    width: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include translate(-50%, -50%);
+                    @include transition(0.4s);
+                }
+                h5 {
+                    font-size: 20px;
+                    line-height: normal;
+                    @include weight(bold);
+                    text-transform: capitalize;
+                    color: $secondary-color;
+                }
+                h6 {
+                    color: #cccccc;
+                    padding-top: 10px;
+                    @include weight(regular);
+                    text-transform: capitalize;
+                    font-size: $size;
+                }
+                i {padding-top: 20px; color: $base-color;}
+            }
+            &:hover {
+                .item_caption {
+                    cursor: pointer;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        //Mobil
+        @include mobil {
+            padding-top: 50px;
+            .item {
+                .item_caption {
+                    .caption {
+                        h5 {font-size: $size;}
+                        h6 {font-size: 12px; padding-top: 8px;}
+                        i {padding-top: 15px;}
+                    }
+                }
+            }
+        }
+        //X-Small
+        @include x-small {
+            .item {
+                .item_caption {
+                    .caption {
+                        h5 {font-size: 12px;}
+                        h6 {font-size: 10px; padding-top: 5px;}
+                        i {padding-top: 10px; font-size: $size;}
+                    }
+                }
+            }
+        }
+        //owl-dots
+        .owl-dots {
+            margin-top: 25px;
+            .owl-dot {
+                span {
+                    width: 25px;
+                    height: 7px;
+                    background-color: $secondary-color;
+                    @include transition(0.3s);
+                }
+            }
+            .active {
+                span {
+                    width: 40px;
+                    height: 7px;
+                    background-color: $three-color;
+                }
+            }
+        }
+    }
+    //button
+    .button {
+        margin-top: 40px;
+        background-color: $secondary-color;
+        padding: 15px 30px;
+        cursor: pointer;
+        cursor: pointer;
+        a {
+            color: $base-color;
+            text-transform: uppercase;
+            @include weight(bold);
+            font-size: $size;
+        }
+        //Mobil
+        @include mobil {
+            padding: 10px 20px;
+            a {font-size: 12px;}
+        }
+    }
+}
+
+//Home_Statement#
+#home_statement {
+    width: 100%;
+    background: linear-gradient( rgba(57, 57, 57, .8), rgba(57, 57, 57, .8)), url("https://via.placeholder.com/1920x580");
+    padding: 150px 0 150px 0;
+    @include bg-size(cover);
+    background-position: center;
+    position: relative;
+    //center
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+        text-align: center;
+        h6 {
+            color: $base-color;
+            text-transform: uppercase;
+            font-size: 35px;
+            line-height: normal;
+            letter-spacing: 1px;
+            @include weight(bold);
+        }
+        button {
+            margin-top: 20px;
+            background-color: $secondary-color;
+            padding: 10px 20px;
+            a {
+                @include flex();
+                @include align-items(center);
+                i {color: $base-color}
+                h6 {
+                    color: $base-color; padding-left: 10px;
+                    @include weight(bold); font-size: 16px;
+                }
+            }
+        }
+    }
+    //Notebook
+    @include notebook {
+        .center {
+            h6 {font-size: 25px;}
+        }
+    }
+    //Notebook
+    @include notebook {
+        .center {
+            h6 {font-size: 25px;}
+        }
+    }
+    //Tablet
+    @include tablet {
+        .center {
+            text-align: center;
+            h6 {font-size: 20px;}
+        }
+    }
+    //X-Tablet
+    @include x-tablet {
+        .center {
+            text-align: center;
+            h6 {font-size: 17px;}
+        }
+    }
+    //Mobil
+    @include mobil {
+        .center {
+            text-align: center;
+            h6 {font-size: $size;}
+            button {
+                margin-top: 17px;
+                padding: 7px 15px;
+                a {
+                    @include flex();
+                    @include flex-direction(column);
+                    h6 {
+                        padding: 5px 0 0 0;
+                        font-size: 12px;
+                        letter-spacing: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Home_Blog#
+#home_blog {
+    width: 100%;
+    padding: 80px 0 80px 0;
+    text-align: center;
+    //title
+    .title {
+        font-size: 30px;
+        @include weight(bold);
+        text-transform: uppercase;
+        color: $primary-color;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            margin: 0 auto;
+            background-color: $three-color;
+        }
+        //Tablet
+        @include tablet {
+            font-size: 20px;
+        }
+        //Mobil
+        @include mobil {
+            font-size: 16px;
+            line-height: normal;
+            &::before {bottom: -12px}
+        }
+    }
+    //home_blog_owl
+    .home_blog_owl {
+        padding-top: 70px;
+        //item
+        .item {
+            text-align: left;
+            position: relative;
+            img {width: 100%;}
+            .category {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background-color: $secondary-color;
+                color: $base-color;
+                @include weight(bold);
+                font-size: $size;
+                padding: 7px 15px;
+                cursor: pointer;
+            }
+            //overlay
+            .overlay {
+                background-color: #f6f6f6;
+                padding: 20px 15px;
+                h6 {
+                    line-height: normal;
+                    a {
+                        color: $primary-color;
+                        text-transform: capitalize;
+                        font-size: 18px;
+                        letter-spacing: 0.4px;
+                        @include weight(bold);
+                    }
+                }
+                .date {
+                    padding-top: 5px;
+                    color: $four-color;
+                    letter-spacing: 1px;
+                }
+                p {
+                    padding-top: 10px;
+                    color: $four-color;
+                    font-size: $size;
+                    line-height: 20px;
+                    letter-spacing: 0.4px;
+                }
+                button {
+                    margin-top: 15px;
+                    background-color: $secondary-color;
+                    padding: 10px 20px;
+                    a {
+                        color: $base-color;
+                        text-transform: uppercase;
+                        @include weight(bold);
+                    }
+                }
+            }
+        }
+        //Mobil
+        @include mobil {
+            padding-top: 60px;
+            .item {
+                .category {
+                    top: 5px;
+                    left: 5px;
+                    font-size: 12px;
+                }
+                .overlay {
+                    padding: 15px 10px;
+                    h6 {
+                        a {font-size: 16px;}
+                    }
+                    .date {font-size: 12px;}
+                    p {font-size: 12px; line-height: 18px;}
+                    button {
+                        padding: 5px 10px;
+                        a {font-size: 12px;}
+                    }
+                }
+            }
+        }
+        //owl-dots
+        .owl-dots {
+            margin-top: 25px;
+            .owl-dot {
+                span {
+                    width: 25px;
+                    height: 7px;
+                    background-color: $secondary-color;
+                    @include transition(0.3s);
+                }
+            }
+            .active {
+                span {
+                    width: 40px;
+                    height: 7px;
+                    background-color: $three-color;
+                }
+            }
+        }
+    }
+    //button
+    .button {
+        margin-top: 40px;
+        text-align: center;
+        background-color: $secondary-color;
+        padding: 15px 30px;
+        cursor: pointer;
+        cursor: pointer;
+        a {
+            color: $base-color;
+            text-transform: uppercase;
+            @include weight(bold);
+            font-size: $size;
+        }
+        //Mobil
+        @include mobil {
+            padding: 10px 20px;
+            a {font-size: 12px;}
+        }
+    }
+}
+
+//Brand_Partners
+#brand_partners {
+    width: 100%;
+    padding: 50px 0 50px 0;
+    background-color: #f2f2f2;
+    //brand_partners_owl
+    .brand_partners_owl {
+        //item
+        .item {
+            img {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+//Home_İnfo#
+#home_info {
+    width: 100%;
+    padding: 50px 0 50px 0;
+    background-color: #e2e2e2;
+    //home_info
+    .home_info {
+        @include flex();
+        @include justify-content(space-between);
+        @include align-items(center);
+        //&_text
+        &_text {
+            font-size: 25px;
+            color: $primary-color;
+            @include weight(bold);
+            letter-spacing: 0.4px;
+        }
+        //&_button
+        &_button {
+            button {
+                background-color: $secondary-color;
+                padding: 15px 20px;
+                a {
+                    @include flex();
+                    @include align-items(center);
+                    i {color: $base-color}
+                    h6 {
+                        color: $base-color; padding-left: 13px;
+                        @include weight(bold); font-size: 16px;
+                    }
+                }
+            }
+        }
+        //Notebook
+        @include notebook {
+            @include flex();
+            @include flex-direction(column);
+            text-align: center;
+            //&_text
+            &_text {
+                font-size: 20px;
+                line-height: normal;
+            }
+            //&_button
+            &_button {
+                margin-top: 15px;
+                button {
+                    padding: 10px 20px;
+                    a {
+                        h6 {font-size: $size;}
+                    }
+                }
+            }
+        }
+        //Small
+        @include small {
+            &_text {font-size: $size;}
+            &_button {
+                button {
+                    a {
+                        @include flex();
+                        @include flex-direction(column);
+                        h6 {padding: 5px 0 0 0; font-size: 12px;}
+                    }
+                }
+            }
+        }
+    }
+}

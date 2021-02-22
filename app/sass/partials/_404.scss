@@ -1,0 +1,161 @@
+/////404.HTML
+
+//Error_Page#
+#error_page {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient( rgba(28, 62, 155, .7), rgba(28, 62, 155, .7)), url("https://via.placeholder.com/1920x250");
+    @include bg-size(cover);
+    background-position: center;
+    position: relative;
+    //page_text
+    .page_text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      text-align: center;
+      h6 {
+        text-transform: uppercase;
+        font-size: 50px;
+        @include weight(bold);
+        color: $secondary-color;
+        letter-spacing: 1px;
+      }
+      ul {
+        text-align: center;
+        padding-top: 15px;
+        @include flex();
+        @include align-items(center);
+        @include justify-content(center);
+        li {
+          a {
+            color: $base-color;
+            text-transform: capitalize;
+            font-size: $size;
+            span {
+              padding: 0 7px;
+            }
+          }
+        }
+      }
+    }
+    //Notebok
+    @include notebook {
+      .page_text {
+        h6 {font-size: 35px}
+      }
+    }
+    //Mobil
+    @include mobil {
+      .page_text {
+        h6 {font-size: 25px}
+        ul {
+          padding-top: 10px;
+          li {
+            a {
+              font-size: 12px;
+              span {padding: 0 5px;}
+            }
+          }
+        }
+      }
+    }
+    //Small
+    @include small {
+      .page_text {
+        h6 {font-size: 18px; line-height: normal}
+        ul {
+          padding-top: 15px;
+          @include flex();
+          @include flex-direction(column);
+          text-align: center;
+          li {
+            padding-bottom: 5px;
+            &:last-child {
+              padding-bottom: 0;
+            }
+            a {
+              span {display: none}
+            }
+          }
+        }
+      }
+    }
+}
+
+//Error#
+#error {
+    width: 100%;
+    height: 100%;
+    padding: 80px 0 80px 0;
+    @include flex();
+    @include align-items(center);
+    @include justify-content(center);
+    position: relative;
+    //error_center
+    .error_center {
+        text-align: center;
+        h5 {
+            color: $three-color;
+            font-size: 150px;
+            @include weight(bold);
+            letter-spacing: 1px;
+        }
+        h6 {
+            padding-top: 20px;
+            color: $primary-color;
+            font-size: 25px;
+            text-transform: capitalize;
+            line-height: normal;
+            letter-spacing: 0.5px;
+        }
+        .error_form {
+            padding-top: 30px;
+            position: relative;
+            input {
+                width: 100%;
+                border: 1px solid #e5e5e5;
+                background-color: #f2f2f2;
+                padding: 10px 20px;
+                color: $four-color;
+            }
+            i {
+                position: absolute;
+                top: 45px;
+                right: 20px;
+                color: $four-color;
+            }
+        }
+        button {
+            margin-top: 40px;
+            background-color: $secondary-color;
+            padding: 20px 30px;
+            a {
+                color: $base-color;
+                text-transform: uppercase;
+                @include weight(bold);
+                font-size: $size;
+            }
+        }
+        //Tablet
+        @include tablet {
+            h5 {font-size: 80px;}
+            h6 {font-size: 18px;}
+        }
+        //Mobil
+        @include mobil {
+            h5 {font-size: 40px;}
+            h6 {font-size: 12px; padding-top: 15px;}
+            .error_form {
+                padding-top: 20px;
+                i {top: 34px;}
+            }
+            button {
+                margin-top: 30px;
+                padding: 10px 20px;
+                a {font-size: 11px}
+            }
+        }
+    }
+}
