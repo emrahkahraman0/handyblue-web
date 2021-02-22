@@ -1,1 +1,85 @@
 /////BLOG.HTML
+
+//Blog_Page#
+#blog_page {
+  width: 100%;
+  height: 250px;
+  background: linear-gradient( rgba(28, 62, 155, .7), rgba(28, 62, 155, .7)), url("https://via.placeholder.com/1920x250");
+  @include bg-size(cover);
+  background-position: center;
+  position: relative;
+  //page_text
+  .page_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+    text-align: center;
+    h6 {
+      text-transform: uppercase;
+      font-size: 50px;
+      @include weight(bold);
+      color: $secondary-color;
+      letter-spacing: 1px;
+    }
+    ul {
+      text-align: center;
+      padding-top: 15px;
+      @include flex();
+      @include align-items(center);
+      @include justify-content(center);
+      li {
+        a {
+          color: $base-color;
+          text-transform: capitalize;
+          font-size: $size;
+          span {
+            padding: 0 7px;
+          }
+        }
+      }
+    }
+  }
+  //Notebok
+  @include notebook {
+    .page_text {
+      h6 {font-size: 35px}
+    }
+  }
+  //Mobil
+  @include mobil {
+    .page_text {
+      h6 {font-size: 25px}
+      ul {
+        padding-top: 10px;
+        li {
+          a {
+            font-size: 12px;
+            span {padding: 0 5px;}
+          }
+        }
+      }
+    }
+  }
+  //Small
+  @include small {
+    .page_text {
+      h6 {font-size: 18px; line-height: normal}
+      ul {
+        padding-top: 15px;
+        @include flex();
+        @include flex-direction(column);
+        text-align: center;
+        li {
+          padding-bottom: 5px;
+          &:last-child {
+            padding-bottom: 0;
+          }
+          a {
+            span {display: none}
+          }
+        }
+      }
+    }
+  }
+}
