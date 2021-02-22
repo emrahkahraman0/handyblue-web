@@ -83,3 +83,175 @@
       }
     }
 }
+
+
+//Our_Contact#
+#our_contact {
+  width: 100%;
+  padding: 80px 0 80px 0;
+  //contact_map
+  .contact_map {
+    width: 100%;
+    position: relative;
+    i {
+      color: $three-color;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+  //our_contact
+  .our_contact {
+    margin-top: 80px;
+    padding: 50px 100px;
+    border: 1px solid #e6e6e6;
+    //&_form
+    &_form {
+      .input_item {
+        @include flex();
+        @include flex-direction(column);
+        margin-bottom: 25px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        label {
+          text-transform: capitalize;
+          font-size: $size;
+          @include weight(regular);
+          color: $four-color;
+        }
+        input, textarea {
+          margin-top: 10px;
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #e6e6e6;
+          background-color: transparent;
+          resize: none;
+        }
+      }
+      button {
+        background-color: $secondary-color;
+        padding: 20px 40px;
+        a {
+          color: $base-color;
+          text-transform: uppercase;
+          @include weight(bold);
+          font-size: $size;
+        }
+      }
+      //Notebook
+      @include notebook {
+        text-align: center;
+        button {
+          width: 100%;
+          padding: 15px 0;
+        }
+      }
+      //Mobil
+      @include mobil {
+        .input_item {
+          margin-bottom: 15px;
+          label {font-size: 12px; line-height: normal}
+          input {padding: 10px;}
+        }
+        button {
+          width: 100%;
+          padding: 10px 0;
+          a {font-size: 12px}
+        }
+      }
+    }
+    //&_info
+    &_info {
+      text-align: center;
+      .info_item {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        i {color: $three-color;}
+        h6 {
+          padding-top: 10px;
+          color: $primary-color;
+          line-height: normal;
+          text-transform: capitalize;
+          @include weight(bold);
+          font-size: 18px;
+        }
+        p {
+          padding-top: 5px;
+          font-size: $size;
+          line-height: normal;
+          color: $four-color;
+        }
+        ul {
+          padding-top: 20px;
+          li {
+            display: inline-block;
+            margin-right: 10px;
+            &:last-child {
+              margin-right: 0;
+            }
+            a {
+              color: $four-color;
+              i {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                background-color: #e6e6e6;
+                text-align: center;
+                @include border-radius(50%);
+              }
+            }
+          }
+        }
+      }
+      //Notebook
+      @include notebook {
+        margin-top: 50px;
+      }
+      //X-Tablet
+      @include x-tablet {
+        .info_item {
+          margin-bottom: 20px;
+          h6 {font-size: $size; padding-top: 6px}
+        }
+      }
+      //Small
+      @include small {
+        .info_item {
+          margin-bottom: 15px;
+          h6 {font-size: 12px; padding-top: 6px}
+          p {font-size: 12px;}
+          ul {
+            padding-top: 15px;
+            li {
+              margin-right: 5px;
+              a {
+                i {
+                  width: 25px;
+                  height: 25px;
+                  line-height: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //Notebook
+    @include notebook {
+      padding: 30px 70px;
+    }
+    //X-Tablet
+    @include x-tablet {
+      padding: 20px 40px;
+    }
+    //Mobil
+    @include mobil {
+      padding: 20px 0;
+    }
+  }
+}
