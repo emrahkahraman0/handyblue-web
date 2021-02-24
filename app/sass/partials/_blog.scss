@@ -83,3 +83,118 @@
     }
   }
 }
+
+//Our_Blog#
+#our_blog {
+  width: 100%;
+  padding: 80px 0 50px 0;
+  //our_blog
+  .our_blog {
+    //&_item
+    &_item {
+      margin-bottom: 30px;
+      img {width: 100%}
+      .blog_desc {
+        margin-top: -2px;
+        border: 1px solid #e5e5e5;
+        padding: 20px;
+        h6 {
+          line-height: normal;
+          a {
+            @include weight(bold);
+            font-size: 18px;
+            color: $primary-color;
+          }
+        }
+        p {
+          padding-top: 10px;
+          color: $four-color;
+          line-height: 20px;
+        }
+        .desc_items {
+          padding-top: 10px;
+          @include flex();
+          @include justify-content(space-between);
+          .desc_item {
+            @include flex();
+            @include align-items(center);
+            color: $four-color;
+            h5 {padding-left: 6px; font-size: 12px}
+          }
+        }
+      }
+    }
+    //Large
+    @include large {
+      &_item {
+        .blog_desc {
+          padding: 17px;
+        }
+      }
+    }
+    //Mobil
+    @include mobil {
+      &_item {
+        .blog_desc {
+          padding: 10px;
+          h6 {
+            a {font-size: $size}
+          }
+          p {
+            padding-top: 8px;
+            font-size: 12px;
+            line-height: 18px;
+          }
+          .desc_items {
+            @include flex;
+            @include flex-direction(column);
+            @include align-items(center);
+            text-align: center;
+            .desc_item {
+              @include flex();
+              @include flex-direction(column);
+              margin-bottom: 12px;
+              &:last-child {
+              margin-bottom: 0;
+            }
+              h5 {padding: 5px 0 0 0}
+            }
+          }
+        }
+      }
+    }
+    //Small
+    @include small {
+      &_item {
+        .blog_desc {
+          padding: 6px;
+        }
+      }
+    }
+  }
+  //page
+  .page {
+    padding-top: 20px;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: $base-color;
+        background-color: $secondary-color;
+        @include transition(0.3s);
+        &:hover {
+          background-color: $three-color;
+        }
+      }
+    }
+  }
+}
